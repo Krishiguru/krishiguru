@@ -1,0 +1,38 @@
+.container-fluid.mx-0.px-0
+  %nav#mainNav.navbar.navbar-expand-md.navbar-light.bg-light.fixed-top
+    %a.navbar-brand{href: "#"} KrishiGuru
+    %button.navbar-toggler{"aria-controls" => "navbarResponsive", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarResponsive", "data-toggle" => "collapse", "type" => "button"}
+      %span.navbar-toggler-icon
+    #navbarResponsive.collapse.navbar-collapse
+      %ul.navbar-nav.ml-auto
+        %li.nav-item
+          %a.nav-link.active{href: "#about-us"} About Us
+        %li.nav-item
+          %a.nav-link{href: "#motivation"} Motivation
+        %li.nav-item
+          %a.nav-link{href: "#knowledgebase"} Knowledgebase
+        %li.nav-item
+          %a.nav-link{href: "#supply-chain"} Supply Chain
+        %li.nav-item
+          %a.nav-link{href: "#contact-us"} Contact Us
+  %content{"data-spy"=> "scroll", "data-target"=> "#mainNav", "style"=> "position:relative;"}
+    #about-us
+      .padded-content
+        .text-justify.text-center
+          Lorem ipsum dolor sit
+    #motivation.active
+      .padded-content
+        .text-justify.text-center
+          Lorem ipsum dolor sit
+    #knowledgebase
+      .padded-content
+        .text-justify.text-center
+          Lorem ipsum dolor sit
+    #supply-chain
+      .padded-content
+        .text-justify.text-center
+          Lorem ipsum dolor sit
+    #contact-us
+      .padded-content
+        .text-justify.text-center
+          Lorem ipsum dolor sit

@@ -1,0 +1,68 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.padded-content{
+  padding: 16px;
+}
+.background-settings{
+  content: " ";
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  opacity: .4;
+  z-index: -1;
+  background-size: cover;
+}
+nav#mainNav{
+  a{
+    color: #333;
+  }
+}
+#about-us{
+  &:before {
+    @extend .background-settings;
+    top: 0;
+    background-image:image-url(about_us);
+  }
+
+  margin-top:56px;
+  height: 100vh;
+}
+
+#motivation{
+  &:before {
+    @extend .background-settings;
+    top: 100vh;
+    background-image:image-url(motivation);
+  }
+
+  height: 100vh;
+}
+
+#knowledgebase{
+  &:before {
+    @extend .background-settings;
+    top: 200vh;
+    background-image:image-url(knowledgebase);
+  }
+
+  height: 100vh;
+}
+#supply-chain{
+  &:before {
+    @extend .background-settings;
+    top: 300vh;
+    background-image:image-url(supply_chain);
+  }
+
+  height: 100vh;
+}
+#contact-us{
+  &:before {
+    @extend .background-settings;
+    top: 400vh;
+    background-image:image-url(contact_us);
+  }
+
+  height: 100vh;
+}
