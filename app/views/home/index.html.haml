@@ -11,15 +11,15 @@
       %li.nav-item.dropdown
         %a.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"} Services
         .dropdown-menu
-          %a.dropdown-item{:href => "#"} Weather
+          %a.dropdown-item{:href => weather_path} Weather
           .dropdown-divider
-          %a.dropdown-item{:href => "#"} Market
+          %a.dropdown-item{:href => market_index_path} Market
           .dropdown-divider
-          %a.dropdown-item{:href => "#"} News
+          %a.dropdown-item{:href => news_index_path} News
           .dropdown-divider
-          %a.dropdown-item{:href => "#"} Guide
+          %a.dropdown-item{:href => guides_path} Guide
           .dropdown-divider
-          %a.dropdown-item{:href => "#"} Finance
+          %a.dropdown-item{:href => finance_index_path} Finance
       %li.nav-item
         %a.nav-link{href: "#blog"} Blog
       %li.nav-item

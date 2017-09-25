@@ -1,24 +1,29 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### Ruby version 2.4.1
 
-Things you may want to cover:
+#### System dependencies
+- PostgreSQL
+- Javascript runtime environment (NodeJS preferred)
+- Ruby 2.4.1 (installation instruction at [rvm.io](https://rvm.io/rvm/install) should get you the current stable i.e 2.4.1)
+- Rails 5.1.4 (`gem install rails` will get you the current stable i.e 5.1.4)
 
-* Ruby version
+#### Configuration
 
-* System dependencies
+##### Database creation
 
-* Configuration
+###### Database initialization
 
-* Database creation
+###### Running test suite
 
-* Database initialization
+###### Other Services
 
-* How to run the test suite
+###### Deployment instructions
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...
+#### Get it running on your local machine
+- clone repository from Github `git clone <repo_url>`
+- switch to the project directory `cd <project_path>`
+- install gem bundle `bundle install`
+- start rails server `rails server` (defaults to development environment)
+- you should now have your local server running and can connect to it on `localhost:3000` (default port)
