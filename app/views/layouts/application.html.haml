@@ -8,4 +8,64 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    = yield
+    .container-fluid.mx-0.px-0
+      = yield
+      %hr
+      %footer{:role => "contentinfo"}
+        .container
+          .row
+            .col-md-4.col-sm-12
+              .card{style: "height: 250px;"}
+                .card-body
+                  %h2.card-title Services
+                  %hr
+                  %ul.list-unstyled
+                    %li
+                      %a{:href => "#"} Weather
+                    %li
+                      %a{:href => "#"} Market
+                    %li
+                      %a{:href => "#"} News
+                    %li
+                      %a{:href => "#"} Guides
+                    %li
+                      %a{:href => "#"} Finance
+                    %li
+                      %a{:href => "#"} Blog
+            .col-md-4.col-sm-12
+              .card{style: "height: 250px;"}
+                .card-body
+                  %h2 Website Information
+                  %hr
+                  %ul.list-unstyled
+                    %li
+                      %a{:href => "#"} Website Tutorial
+                    %li
+                      %a{:href => "#"} Accessibility
+                    %li
+                      %a{:href => "#"} Disclaimer
+                    %li
+                      %a{:href => "#"} Privacy Policy
+                    %li
+                      %a{:href => "#"} Sitemap
+                    %li
+                      %a{:href => "#"} FAQs
+            .col-md-4.col-sm-12
+              .card{style: "height: 250px;"}
+                .card-body
+                  %h2 Contact Us
+                  %hr
+                  %address
+                    %ul.list-unstyled
+                      %li
+                        Email
+                        %a{href: "mailto:contact@krishiguru.org"}
+                          contact@krishiguru.org
+                        %br
+                        Media Queries
+                        %a{href: "mailto:info@krishiguru.org"}
+                          info@krishiguru.org
+                      %li
+                        Australia: +61 424 199 515
+                        %br
+                        India: +91 8087 988 667

@@ -4,15 +4,7 @@
 .padded-content{
   padding: 16px;
 }
-.background-settings{
-  content: " ";
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  opacity: .4;
-  z-index: -1;
-  background-size: cover;
-}
+
 nav#mainNav{
   a{
     color: #333;
@@ -20,48 +12,32 @@ nav#mainNav{
 }
 #about-us{
   &:before {
-    @extend .background-settings;
+    content: " ";
+    position: absolute;
+    width: 98vw;
+    height: 25vh;
+    opacity: .6;
+    z-index: -1;
+    background-size: cover;
     top: 0;
     background-image:image-url(about_us);
   }
 
   margin-top:56px;
-  height: 100vh;
+  height: 25vh;
 }
 
 #motivation{
   &:before {
-    @extend .background-settings;
+    content: " ";
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    opacity: .4;
+    z-index: -1;
+    background-size: cover;
     top: 100vh;
     background-image:image-url(motivation);
-  }
-
-  height: 100vh;
-}
-
-#knowledgebase{
-  &:before {
-    @extend .background-settings;
-    top: 200vh;
-    background-image:image-url(knowledgebase);
-  }
-
-  height: 100vh;
-}
-#supply-chain{
-  &:before {
-    @extend .background-settings;
-    top: 300vh;
-    background-image:image-url(supply_chain);
-  }
-
-  height: 100vh;
-}
-#contact-us{
-  &:before {
-    @extend .background-settings;
-    top: 400vh;
-    background-image:image-url(contact_us);
   }
 
   height: 100vh;
