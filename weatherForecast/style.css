@@ -1,0 +1,11 @@
+.container{
+    margin-top: 20px;
+}
+#output{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.card{
+    padding: 20px;
+}
