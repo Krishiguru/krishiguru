@@ -1,1 +1,7 @@
-Finance index
+.padded-content
+  %h1 Finance Options and reports
+  - @items.each do |item|
+    %h3= item.title
+    %h5= item.sub_title
+    %p= item.peek
+    =link_to "Read full story", finance_path(item)

@@ -9,6 +9,31 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     .container-fluid.mx-0.px-0
+      %nav#mainNav.navbar.navbar-expand-md.navbar-light.bg-light.fixed-top
+        %a.navbar-brand{href: "/"} KrishiGuru
+        %button.navbar-toggler{"aria-controls" => "navbarResponsive", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarResponsive", "data-toggle" => "collapse", "type" => "button"}
+          %span.navbar-toggler-icon
+        #navbarResponsive.collapse.navbar-collapse
+          %ul.navbar-nav.ml-auto
+            %li.nav-item
+              %a.nav-link.active{href: "#about-us"} About Us
+            %li.nav-item.dropdown
+              %a.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"} Services
+              .dropdown-menu
+                %a.dropdown-item{:href => weather_path} Weather
+                .dropdown-divider
+                %a.dropdown-item{:href => market_index_path} Market
+                .dropdown-divider
+                %a.dropdown-item{:href => news_index_path} News
+                .dropdown-divider
+                %a.dropdown-item{:href => guides_path} Guide
+                .dropdown-divider
+                %a.dropdown-item{:href => finance_index_path} Finance
+            %li.nav-item
+              %a.nav-link{href: "#blog"} Blog
+            %li.nav-item
+              %a.nav-link{href: "#contact-us"} Contact Us
+      %div{style: "margin-top: 56px"}
       = yield
       %hr
       %footer{:role => "contentinfo"}

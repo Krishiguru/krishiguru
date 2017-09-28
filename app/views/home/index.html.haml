@@ -1,114 +1,87 @@
-%nav#mainNav.navbar.navbar-expand-md.navbar-light.bg-light.fixed-top
-  %a.navbar-brand{href: "#"} KrishiGuru
-  %button.navbar-toggler{"aria-controls" => "navbarResponsive", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarResponsive", "data-toggle" => "collapse", "type" => "button"}
-    %span.navbar-toggler-icon
-  #navbarResponsive.collapse.navbar-collapse
-    %ul.navbar-nav.ml-auto
-      %li.nav-item
-        %a.nav-link.active{href: "#about-us"} About Us
-      %li.nav-item
-        %a.nav-link{href: "#motivation"} Motivation
-      %li.nav-item.dropdown
-        %a.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"} Services
-        .dropdown-menu
-          %a.dropdown-item{:href => weather_path} Weather
-          .dropdown-divider
-          %a.dropdown-item{:href => market_index_path} Market
-          .dropdown-divider
-          %a.dropdown-item{:href => news_index_path} News
-          .dropdown-divider
-          %a.dropdown-item{:href => guides_path} Guide
-          .dropdown-divider
-          %a.dropdown-item{:href => finance_index_path} Finance
-      %li.nav-item
-        %a.nav-link{href: "#blog"} Blog
-      %li.nav-item
-        %a.nav-link{href: "#contact-us"} Contact Us
-%content{"data-spy"=> "scroll", "data-target"=> "#mainNav", "style"=> "position:relative;"}
+%content
   #about-us.padded-content
     %h1.text-justify.text-center
       About Us
 
   #weather.padded-content
+    %h2 Weather
+    %hr
     .row
-      .col-md-6.col-sm-12
-        %h2.text-center Weather this week
-        %hr
-        Weather info goes here
-      .col-md-6.col-sm-12
-        Weather description goes here
-        %a{href: "#"}
-          More on Weather
+      #weather0.col-md-6.col-sm-12
+      #weather1.col-md-6.col-sm-12
+    .row.text-right
+      %a{href: weather_path}
+        See more on weather
 
-  %hr
   #market.padded-content{style: "padding-top: 20px"}
+    %h2 Market
+    %hr
     .row
       .col-md-6.col-sm-12
-        %h2.text-center Market
-        %hr
         %img.card-img-bottom{:alt => "a local fruit vendor", :src => "#{image_url('market')}", height: 300}
       .col-md-6.col-sm-12
-        Market
-        %a{href: "#"}
-          More about market
+        - @market.each do |m|
+          %h3= m.title
+          %p= m.peek
+    .row
+      %a{href: market_index_path}
+        More on market conditions
 
-  %hr
   #news.padded-content{style: "padding-top: 20px"}
+    %h2 News
+    %hr
     .row
       .col-md-6.col-sm-12
-        All News here
-        %a{href: "#"}
-          More News
+        - @news.each do |n|
+          %h3= n.title
+          %p= n.peek
       .col-md-6.col-sm-12
-        %h2.text-center News
-        %hr
         %img.card-img-bottom{:alt => "Illustrative image of a man reading newspaper", :src => "#{image_url('news')}", height: 300}
+    .row
+      %a{href: news_index_path}
+        More news
 
-  %hr
   #guides.padded-content{style: "padding-top: 20px"}
+    %h2 Guides
+    %hr
     .row
       .col-md-6.col-sm-12
-        %h2.text-center Guides
-        %hr
         %img.card-img-bottom{:alt => "book shelf with a lot of books", :src => "#{image_url('guides')}", height: 300}
       .col-md-6.col-sm-12
-        Guides
-        %a{href: "#"}
-          More Guides
+        - @guides.each do |g|
+          %h3= g.title
+          %p= g.peek
+    .row
+      %a{href: guides_path}
+        Learn more
 
-  %hr
   #finance.padded-content{style: "padding-top: 20px"}
+    %h2 Finance
+    %hr
     .row
       .col-md-6.col-sm-12
-        Finance
-        %a{href: "#"}
-          More finance options
+        - @finance.each do |f|
+          %h3= f.title
+          %p= f.peek
       .col-md-6.col-sm-12
-        %h2.text-center Finance
-        %hr
         %img.card-img-bottom{:alt => "50 Rupee note", :src => "#{image_url('finance')}", height: 300}
+    .row
+      %a{href: finance_index_path}
+        More finance options
 
-  %hr
   #blog.padded-content{style: "padding-top: 20px"}
+    %h2 Blogs
+    %hr
     .row
       .col-md-6.col-sm-12
-        %h2.text-center Blogs
-        %hr
         %img.card-img-bottom{:alt => "a work  desk", :src => "#{image_url('blog')}", height: 300}
       .col-md-6.col-sm-12
-        Blogs
-        %a{href: "#"}
-          Read more
+        - @blogs.each do |b|
+          %h3= b.title
+          %p= b.peek
+    .row
+      %a{href: '#'}
+        Read more
+
   :javascript
-    navigator.permissions.query({name:'geolocation'}).then(function(result) {
-      if (result.state === 'granted') {
-        navigator.geolocation.getCurrentPosition(
-        function(position){
-          console.log(position)
-        })
-      } else if (result.state === 'prompt') {
-        navigator.geolocation.reauest('')
-        alert('Not Granted')
-      }
-      // Don't do anything if the permission was denied.
-    });
+    console.log(fetch_location())
