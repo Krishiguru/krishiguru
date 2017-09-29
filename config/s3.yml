@@ -1,0 +1,16 @@
+
+development: &DEFAULTS
+  bucket: krishiguru-dev
+  access_key_id: 'access key'
+  secret_access_key: 'secret key'
+
+test:
+  <<: *DEFAULTS
+  bucket: nutilesblog
+
+production:
+  <<: *DEFAULTS
+  bucket: krishiguru-prod
+
+staging:
+  <<: *DEFAULTS

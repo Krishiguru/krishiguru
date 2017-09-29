@@ -14,6 +14,7 @@
 //= require turbolinks
 //= require jquery3
 //= require popper
+//= require ckeditor/init
 //= require bootstrap-sprockets
 //= require_tree .
 
@@ -29,8 +30,8 @@ $(document).ready(
 
 
 document.addEventListener("turbolinks:load", function () {
-  let APIkey = "e348e4664e8460c02be4aa66a09f704e";
-  let lat,lng;
+  var APIkey = "e348e4664e8460c02be4aa66a09f704e";
+  var lat,lng;
 
   if (navigator.geolocation) { //check if the users allow the browser to detect their location
       navigator.geolocation.getCurrentPosition(function (position) {
@@ -57,16 +58,16 @@ document.addEventListener("turbolinks:load", function () {
 
     function weatherCardfor(weatherData){
       console.log(weatherData); //check the console to see how the response look like
-      let time = new Date(weatherData.time*1000).
+      var time = new Date(weatherData.time*1000).
         toLocaleString('en', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })
-      let icon = weatherData.icon;
-      let summary =weatherData.summary;
-      let humidity = weatherData.humidity;
-      let windspeed = weatherData.windSpeed;
-      let maxTemp = weatherData.temperatureMax;
-      let minTemp = weatherData.temperatureMin;
-      let iconURL = getIconURL(icon);
-      let item = `
+      var icon = weatherData.icon;
+      var summary =weatherData.summary;
+      var humidity = weatherData.humidity;
+      var windspeed = weatherData.windSpeed;
+      var maxTemp = weatherData.temperatureMax;
+      var minTemp = weatherData.temperatureMin;
+      var iconURL = getIconURL(icon);
+      var item = `
           <div class="card" style="padding: 8px">
               <div class="card-block">
                   <h4 class="card-title">${time}</h4>
