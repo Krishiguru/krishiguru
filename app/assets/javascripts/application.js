@@ -38,13 +38,13 @@ document.addEventListener("turbolinks:load", function () {
         lat = position.coords.latitude;
         lng = position.coords.longitude;
         $.ajax({
-          url: `https://api.darksky.net/forecast/${APIkey}/${lat},${lng}?units=auto&exclude=currently, hourly, minutely`, //the api call
+          url: "https://api.darksky.net/forecast/"+APIkey+"/"+lat +","+lng+"?units=auto&exclude=currently, hourly, minutely", //the api call
           dataType: 'jsonp',
           success: function (response) {
             window.r = response
             response.daily.data.map(
               function(weather_data, index){
-                $(`#weather${index}`).append(weatherCardfor(weather_data))
+                $("#weather"+index).append(weatherCardfor(weather_data))
               }
             )
           },
@@ -67,19 +67,19 @@ document.addEventListener("turbolinks:load", function () {
       var maxTemp = weatherData.temperatureMax;
       var minTemp = weatherData.temperatureMin;
       var iconURL = getIconURL(icon);
-      var item = `
-          <div class="card" style="padding: 8px">
-              <div class="card-block">
-                  <h4 class="card-title">${time}</h4>
-                  <img src=${iconURL}>
-                  <hr />
-                  <p class="card-text"><strong>Summary: </strong>${summary}</p>
-                  <p class="card-text"><strong>Humidity: </strong>${humidity}</p>
-                  <p class="card-text"><strong>Windspeed: </strong>${windspeed}</p>
-                  <p class="card-text"><strong>Max Temperature </strong>${maxTemp} </p>
-                  <p class="card-text"><strong>Min Temperature </strong>${minTemp} </p>
-              </div>
-          </div>`
+      var item = "\
+          <div class='card' style='padding: 8px'>\
+              <div class='card-block'>\
+                  <h4 class='card-title'>"+time+"</h4>\
+                  <img src="+iconURL+">\
+                  <hr />\
+                  <p class='card-text'><strong>Summary: </strong>"+summary+"</p>\
+                  <p class='card-text'><strong>Humidity: </strong>"+humidity+"</p>\
+                  <p class='card-text'><strong>Windspeed: </strong>"+windspeed+"</p>\
+                  <p class='card-text'><strong>Max Temperature </strong>"+maxTemp+"</p>\
+                  <p class='card-text'><strong>Min Temperature </strong>"+minTemp+"</p>\
+              </div>\
+          </div>"
       return item;
     }
 
@@ -106,7 +106,7 @@ document.addEventListener("turbolinks:load", function () {
             case 'partly-cloudy-night':
                 return 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-KUXH104VSJvoy_s3Xam7YfjGMDlY386baw5uF5BjQEAehHQw';
             default:
-                return ""
+                return ''
         }
     }
     //function that is used to print the item to html file
