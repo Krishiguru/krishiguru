@@ -1,6 +1,6 @@
 .padded-content
   %h1= @item.title
   %h2= @item.sub_title
-  =@item.content
+  =raw @item.content
   -if @item.source
-    =link_to "Source", @item.source 
+    =link_to "Source", @item.source

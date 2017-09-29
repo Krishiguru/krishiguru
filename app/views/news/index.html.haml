@@ -3,5 +3,5 @@
   - @items.each do |item|
     %h3= item.title
     %h5= item.sub_title
-    %p= item.peek
+    =raw item.peek
     =link_to "Read full story", news_path(item)

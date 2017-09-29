@@ -22,7 +22,7 @@
       .col-md-6.col-sm-12
         - @market.each do |m|
           %h3= m.title
-          %p= m.peek
+          =raw m.peek
     .row
       %a{href: market_index_path}
         More on market conditions
@@ -34,7 +34,7 @@
       .col-md-6.col-sm-12
         - @news.each do |n|
           %h3= n.title
-          %p= n.peek
+          =raw n.peek
       .col-md-6.col-sm-12
         = image_tag 'news.jpg', class:"card-img-bottom", alt:"Illustrative image of a man reading newspaper", height: 300
     .row
@@ -50,7 +50,7 @@
       .col-md-6.col-sm-12
         - @guides.each do |g|
           %h3= g.title
-          %p= g.peek
+          =raw g.peek
     .row
       %a{href: guides_path}
         Learn more
@@ -62,7 +62,7 @@
       .col-md-6.col-sm-12
         - @finance.each do |f|
           %h3= f.title
-          %p= f.peek
+          =raw f.peek
       .col-md-6.col-sm-12
         = image_tag 'finance.jpg', class:"card-img-bottom", alt:"50 Rupee note", height: 300
     .row
@@ -78,7 +78,7 @@
       .col-md-6.col-sm-12
         - @blogs.each do |b|
           %h3= b.title
-          %p= b.peek
+          =raw b.peek
     .row
       %a{href: '#'}
         Read more
