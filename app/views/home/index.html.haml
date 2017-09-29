@@ -18,7 +18,7 @@
     %hr
     .row
       .col-md-6.col-sm-12
-        %img.card-img-bottom{:alt => "a local fruit vendor", :src => "#{image_url('market')}", height: 300}
+        = image_tag 'market.jpg', class:"card-img-bottom", alt:"a local fruit vendor", height: 300
       .col-md-6.col-sm-12
         - @market.each do |m|
           %h3= m.title
@@ -36,7 +36,7 @@
           %h3= n.title
           %p= n.peek
       .col-md-6.col-sm-12
-        %img.card-img-bottom{:alt => "Illustrative image of a man reading newspaper", :src => "#{image_url('news')}", height: 300}
+        = image_tag 'news.jpg', class:"card-img-bottom", alt:"Illustrative image of a man reading newspaper", height: 300
     .row
       %a{href: news_index_path}
         More news
@@ -46,7 +46,7 @@
     %hr
     .row
       .col-md-6.col-sm-12
-        %img.card-img-bottom{:alt => "book shelf with a lot of books", :src => "#{image_url('guides')}", height: 300}
+        = image_tag 'guides.jpg', class:"card-img-bottom", alt:"book shelf with a lot of books", height: 300
       .col-md-6.col-sm-12
         - @guides.each do |g|
           %h3= g.title
@@ -64,7 +64,7 @@
           %h3= f.title
           %p= f.peek
       .col-md-6.col-sm-12
-        %img.card-img-bottom{:alt => "50 Rupee note", :src => "#{image_url('finance')}", height: 300}
+        = image_tag 'finance.jpg', class:"card-img-bottom", alt:"50 Rupee note", height: 300
     .row
       %a{href: finance_index_path}
         More finance options
@@ -74,7 +74,7 @@
     %hr
     .row
       .col-md-6.col-sm-12
-        %img.card-img-bottom{:alt => "a work  desk", :src => "#{image_url('blog')}", height: 300}
+        = image_tag 'blog.jpg', class:"card-img-bottom", alt:"a work desk", height: 300
       .col-md-6.col-sm-12
         - @blogs.each do |b|
           %h3= b.title
@@ -82,6 +82,3 @@
     .row
       %a{href: '#'}
         Read more
-
-  :javascript
-    console.log(fetch_location())
